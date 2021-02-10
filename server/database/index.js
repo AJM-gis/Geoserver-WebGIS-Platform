@@ -8,9 +8,7 @@ class Database {
     constructor() {
         this._pool = new Pool({
             connectionString: CONNECTION_STRING,
-            ssl: {
-                rejectUnauthorized: false
-            }
+            ssl: SSL
         });
 
         this._pool.on('error', (err, client) => {
@@ -22,7 +20,7 @@ class Database {
 
     query(query, ...args) {
         this._pool.connect((err, client, done) => {
-            if (err) throw err;
+            // if (err) throw err;
             const params = args.length === 2 ? args[0] : [];
             const callback = args.length === 1 ? args[0] : args[1];
 
