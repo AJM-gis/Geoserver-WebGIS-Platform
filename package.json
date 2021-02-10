@@ -1,6 +1,9 @@
 {
   "name": "geoserver-webgis-platform",
   "version": "1.0.0",
+  "engines": {
+    "node": "14.15.5"
+  },
   "description": "React App",
   "main": "index.js",
   "scripts": {
